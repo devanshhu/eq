@@ -16,4 +16,4 @@ class AppUser(models.Model):
     timestamp = models.DateField()
 
     def __str__():
-        return self.name
+        return self.name	
