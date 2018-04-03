@@ -8,6 +8,7 @@ class UserForm(forms.ModelForm):
 
     class Meta:
         model = AppUser
+        widgets = {'myfield': forms.TextInput(attrs={'rows': 2, 'cols': 15}), }
         fields = [
             "name",
             'enrollmentno',

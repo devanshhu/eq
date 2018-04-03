@@ -3,12 +3,14 @@ from django.http import HttpResponse
 import pyqrcode
 from .models import AppUser
 from .forms import UserForm
+import datetime
 # from django.template.loader import get_template
 # Create your views here.
 
 
 def qrview(request):
-    svg = pyqrcode.create('http://localhost:8000/register')
+    dt = datetime.datetime.now().strftime('%y-%m-%d')
+    svg = pyqrcode.create('http://localhost:8000/register-' + now)
     svg.svg('MainProject/static/qrcode.svg', scale=8)
     # t = get_template('QR.html')
     context = {

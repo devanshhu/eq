@@ -8,12 +8,12 @@ from django.core.urlresolvers import reverse
 
 class AppUser(models.Model):
 
-    name = models.TextField()
-    course = models.TextField()
-    enrollmentno = models.TextField()
+    name = models.CharField(max_length=20)
+    course = models.CharField(max_length=20)
+    enrollmentno = models.CharField(max_length=20)
     year = models.IntegerField()
     detailforappointment = models.TextField(default='')
     timestamp = models.DateField()
 
     def __str__():
-        return self.name	
+        return self.name
