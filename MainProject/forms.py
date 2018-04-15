@@ -4,15 +4,20 @@ from django import forms
 
 
 class UserForm(forms.ModelForm):
+
     # description = forms.CharField(widget=PageDownWidget)
 
     class Meta:
         model = AppUser
-        widgets = {'myfield': forms.TextInput(attrs={'rows': 2, 'cols': 15}), }
+        widgets = {'myfield': forms.TextInput(
+            attrs={
+                'class': 'form-control',
+            }),
+        }
         fields = [
             "name",
             'enrollmentno',
             'course',
             'year',
-            'timestamp'
+            'detailforappointment'
         ]

@@ -1,9 +1,13 @@
 body
 {
 	margin:0px;
-	/*background-image: url('bg.jpg');*/
+	background-image: url('bg.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
+}
+.header
+{
+	color:white;
 }
 
 .container
@@ -14,7 +18,10 @@ body
 	justify-content: center;
 	flex-direction:column;
 	margin:auto;
-
+}
+.UserName
+{
+	/*border:1px solid red;*/
 }
 
 .content
@@ -25,17 +32,32 @@ body
 	justify-content: center;
 }
 
+.subm-btn
+{
+	display:flex;
+	flex-wrap:nowrap;
+	align-content: center;
+	align-items:center;
+	justify-content: center;
+	margin-left:10px;
+	margin-right:10px;
+}
+
 .info-card
 {
-	/*background-color: black;*/
-	width:300px;
-	height:400px;
+	background-color: white;
+	width:400px;
+	height:500px;
 	display:flex;
 	align-items:center;
 	justify-content: center;
 	box-shadow:3px 5px 5px 0 rgba(0,0,0,0.4);
 	transition:0.3s;
 
+}
+.input-flds
+{
+	margin-right:50px;
 }
 
 .info-card:hover

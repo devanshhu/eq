@@ -9,19 +9,46 @@
 </head>
 <body>
 	{% if messages%}
+	
 		{{messages }}
+	
 	{% endif %}
+	
 	<div class="container">
-		<h1>Register Here</h1>
+		<h1 class='header'>Register Here</h1>
 	</div>
+
 	<div class="container">
-	<div class="info-card">
-	<form method="POST" action='' enctype='multipart/form-data'>
-		{% csrf_token %}
-		{{form.as_p}}
-		<input type="submit" value="register" class="btn btn-secondary">
-	</form>
-	</div>
+		<div class="info-card">
+			<form method="POST">
+					{% csrf_token %}
+					 <div class='UserName'>
+					 	<label for='name'> Name:</label>
+							{{form.name}}
+					</div>
+					 <div class='UserName'>
+					 	<label for='year'> Year:</label>
+						{{form.year}}
+					</div>
+
+					 <div class='UserName'>
+					 	<label for='Enrollment'> Enrollment No:</label>
+						{{form.enrollmentno}}
+					</div>
+
+					 <div class='UserName'>
+					 	<label for='Course'> Course:</label>
+						{{form.course}}
+					</div>
+
+					 <div class='UserName'>
+					 	<label for='Details'> Details:</label>
+						{{form.detailforappointment}}
+					</div>
+					<input type="submit" value="register" class="btn btn-secondary subm-btn">
+			</form>
+		</div>
 	</div>
 </body>
+
 </html>
