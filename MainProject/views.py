@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import pyqrcode
+from django.utils import timezone
 import MySQLdb
 from .models import AppUser
 from .forms import UserForm
@@ -28,6 +29,11 @@ def registerUser(request):
         if form.is_valid():
             instance = form.save(commit=True)
             instance.user = request.user
+            # print(instance.course)
+            instance.timestamp = datetime.datetime.now()
+            instance.timeslot_start = timezone.now()
+            instance.regdate = timezone.now
+
             instance.save()
             name = form.cleaned_data['name']
             year = form.cleaned_data['year']
@@ -45,3 +51,16 @@ def registerUser(request):
     }
 
     return render(request, 'post_form.html', context)
+
+
+def listView(request):
+    query = AppUser.objects.all().order_by("-id")
+    # print('inside list')
+    if query:
+        # print('result found->')
+        listofpeople = query.filter(regdate=timezone.now())
+        context = {
+            "queue": query,
+        }
+        # print(listofpeople)
+        return render(request, 'list.html', context)

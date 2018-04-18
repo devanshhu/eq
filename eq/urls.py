@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from MainProject.views import qrview, registerUser
+from MainProject.views import qrview, registerUser, listView
 
 
 urlpatterns = [
@@ -23,4 +23,5 @@ urlpatterns = [
     # url(r'\^user/', include('MinorProject.urls', namespace='users')),
     url(r'^qr/', qrview),
     url(r'register/', registerUser),
+    url(r'^list/', listView)
 ]
