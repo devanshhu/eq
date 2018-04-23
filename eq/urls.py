@@ -16,12 +16,12 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from MainProject.views import qrview, registerUser, listView
-
+from datetime import datetime
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # url(r'\^user/', include('MinorProject.urls', namespace='users')),
     url(r'^qr/', qrview),
-    url(r'register/', registerUser),
+    url(r'register-' + datetime.now().strftime("%y-%m-%d") + '/', registerUser),
     url(r'^list/', listView)
 ]

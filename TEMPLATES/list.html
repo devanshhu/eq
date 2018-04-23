@@ -1,15 +1,39 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
 	<title>List</title>
+	<link rel="stylesheet" type="text/css" href='{% static "base.css" %}'>
 </head>
 <body>
-
-	{% if queue %}
+	<div class='container'>
+				<div class='header'>
+					<h1>Todays's List</h1>
+				</div>
+			<div class='info-card' style='width:500px;'>
+			<table class="Table-list"> 
+					<thead >
+						<tr>
+							<td>Name</td>
+							<td>Enrollment No.</td>
+							<td>Registration Date</td>
+							<td>Timeslot</td>
+						</tr>
+					</thead>
+					<tbody class='Table-Body'>
+		{% if queue %}
 		{% for names in queue%}
-			{{names}}
+						<tr>
+				<td>{{names.name}}</td>
+				<td>{{names.enrollmentno}}</td><br>
+				<td>{{names.regdate|date:"SHORT_DATE_FORMAT"}}</td>
+				<td>{{names.timeslot_start|time:"h:i"}} to {{names.timeslot_end|time:"h:i"}}</td>
+						</tr>
 		{% endfor %}
-	{% endif %}
-
+		{% endif %}	
+			</tbody>
+			</table>
+			</div>
+</div>
 </body>
 </html>

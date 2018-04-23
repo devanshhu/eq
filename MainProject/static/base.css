@@ -10,6 +10,29 @@ body
 	color:white;
 }
 
+.Header-table
+{
+	font-weight: bold !important;
+	display:flex;
+}
+
+.Table-list
+{
+	border:1px solid black;
+	text-align:center;
+	border-collapse:collapse;
+	padding:5px;
+}
+
+table ,tr,td
+{
+
+	border:1px solid black;
+	text-align:center;
+	border-collapse:collapse;
+	padding:5px;
+}
+
 .container
 {
 	display:flex;
